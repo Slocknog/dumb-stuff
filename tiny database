@@ -1,0 +1,32 @@
+import time
+login = input("Please enter the password.")
+if login == "Slocknog":
+    while True:
+        selection = input("Welcome to the database, Master. What would you like to access? \nList of entries: \na - General Log \nb - To-Do List \nc - MSGSU Credentials \n \nEnter 'quit' to exit.")
+        if selection == "a":
+            aread = open("a.txt", "r")
+            if aread.mode == "r":
+                contents = aread.read()
+                print (contents)
+                print ("")
+                menureturn = input ("Press Enter for menu.")
+        elif selection == "b":
+            bread = open("b.txt", "r")
+            if bread.mode == "r":
+                contents = bread.read()
+                print (contents)
+                print ("")
+                menureturn = input ("Press Enter for menu.")
+        elif selection == "c":
+            cread = open("c.txt", "r")
+            if cread.mode == "r":
+                contents = cread.read()
+                print (contents)
+                print ("")
+                menureturn = input ("Press Enter for menu.")
+        elif selection == "quit":
+            print ("Shutting down. Have a nice day.")
+            time.sleep(1)
+            quit()
+        else:
+            print ("Sorry, unknown command.")
